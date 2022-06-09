@@ -1,0 +1,4 @@
+/dist
+/src/myanimelist_downloader.egg-info
+\src/myanimelist_downloader/__pycache__/downloader.cpython-310.pyc
+.env
