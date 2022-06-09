@@ -107,10 +107,9 @@ def main():
         "--env-file",
         dest="env_file",
         type=file_path,
-        default=default_env,
+        default=None,
         help="Enviroment file",
     )
-    del default_env
     parser.add_argument(
         "-a",
         "--anime",
@@ -135,7 +134,8 @@ def main():
     username: Union[str, None] = args.username
     password: Union[str, None] = args.password
     download_directory: Union[str, None] = args.download_directory
-    env_file: str = args.env_file
+    env_file: str = args.env_file or default_env
+    del default_env
     lists: list = []
     if args.anime:
         lists.append(List.ANIME)
