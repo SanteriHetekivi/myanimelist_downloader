@@ -50,6 +50,21 @@ class Driver(Chrome):
             # Set to work as headless.
             options.headless = True
 
+        # Add custom arguments if enviroment variables are set.
+        for arg in [
+            "no-sandbox",
+            "disable-dev-shm-usage",
+            "disable-extensions",
+            "disable-gpu",
+            "disable-dev-shm-usage",
+        ]:
+            if str(
+                getenv(
+                    "SELENIUM_{arg}".format(arg=arg.upper().replace("-", "_")), False
+                )
+            ).lower() in ("true", "1"):
+                options.add_argument("--{arg}".format(arg=arg))
+
         # Set downloads directory.
         if downloads_dir:
             options.add_experimental_option(
