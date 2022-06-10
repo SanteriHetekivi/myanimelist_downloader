@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  myanimelist_downloader:
+    build: .
+    volumes:
+      - "./downloads:/app/downloads"
+      - ".env:/app/.env"
+    command: myanimelist_downloader --download-directory='/app/downloads' --env-file='/app/.env' --anime --manga
