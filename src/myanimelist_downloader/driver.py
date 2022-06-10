@@ -56,7 +56,6 @@ class Driver(Chrome):
             "disable-dev-shm-usage",
             "disable-extensions",
             "disable-gpu",
-            "disable-dev-shm-usage",
         ]:
             if str(
                 getenv(

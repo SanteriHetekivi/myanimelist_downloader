@@ -27,3 +27,14 @@ options:
   -m, --manga, --no-manga
                         Download mangalist. (default: False)
 ```
+
+## Enviroment
+| ENV                            | Description                                                                              |
+| ------------------------------ | ---------------------------------------------------------------------------------------- |
+| MAL_USERNAME                   | MyAnimeList username.                                                                    |
+| MAL_PASSWORD                   | MyAnimeList password.                                                                    |
+| SELENIUM_NO_SANDBOX            | Run Chrome without sandbox.                                                              |
+| SELENIUM_DISABLE_DEV_SHM_USAGE | Disable Chrome shared memory space.                                                      |
+| SELENIUM_DISABLE_EXTENSIONS    | Disable Chrome extensions.                                                               |
+| SELENIUM_DISABLE_GPU           | Disable Graphics Processing Unit with Chrome.                                            |
+| SELENIUM_DEBUG                 | Turn on/off Selenium debuging.When true, run Chrome with head and do not close on error. |

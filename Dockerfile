@@ -25,4 +25,4 @@ RUN chmod 777 /app
 WORKDIR /app
 
 # Install myanimelist_downloader.
-RUN pip install --upgrade --no-cache-dir myanimelist_downloader==0.0.4
+RUN pip install --upgrade --no-cache-dir myanimelist_downloader==0.0.5
