@@ -1,6 +1,7 @@
 version: "3.9"
 services:
   myanimelist_downloader:
+    image: "ghcr.io/santerihetekivi/myanimelist_downloader:main"
     build: .
     volumes:
       - "./downloads:/app/downloads"

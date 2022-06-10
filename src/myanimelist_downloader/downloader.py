@@ -28,6 +28,9 @@ from string import ascii_lowercase
 # For defining list type manga|anime.
 from .list import List
 
+# Error that element was not found.
+from selenium.common.exceptions import NoSuchElementException
+
 
 class Downloader:
     """Download MyAnimeList manga or anime lists."""
@@ -71,6 +74,14 @@ class Downloader:
             try:
                 # Get export page.
                 driver.get("https://myanimelist.net/panel.php?go=export")
+
+                # Accept privacy popup.
+                try:
+                    driver.find_element(
+                        By.XPATH, "//div[@class='qc-cmp2-summary-buttons']/button[1]"
+                    ).click()
+                except NoSuchElementException:
+                    return False
 
                 # Fill and submit login form.
                 form = driver.element(By.NAME, "loginForm")
