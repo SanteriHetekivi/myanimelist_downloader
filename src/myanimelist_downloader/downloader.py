@@ -81,7 +81,8 @@ class Downloader:
                         By.XPATH, "//div[@class='qc-cmp2-summary-buttons']/button[1]"
                     ).click()
                 except NoSuchElementException:
-                    return False
+                    # No popup so just continue.
+                    pass
 
                 # Fill and submit login form.
                 form = driver.element(By.NAME, "loginForm")
